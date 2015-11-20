@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 小鳥遊　寿限無
+  address: 長野県塩尻市広丘野村
+  email: jugem@exam.co.jp
+  pay_type: クレジットカード
+
+two:
+  name: David Thomas
+  address: USA
+  email: dave@example.org
+  pay_type: 銀行振り込み
