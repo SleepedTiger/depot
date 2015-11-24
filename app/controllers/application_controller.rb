@@ -3,12 +3,19 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :now#, if: :whitelist
+  before_action :authorize
 
   def now
     @time = Time.now
   end
 
   private
+
+  def authorize
+    unless User.find_by(id: session[:user_id])
+      redirect_to login_url, notice: "ログインしてくんしゃい"
+    end
+  end
 
   # def whitelist
   #   %w{store products carts}.include?(controller_name)

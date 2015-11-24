@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :authorize, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -16,7 +17,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to store_url, notice: "カートは空です"
+      redirect_to store_url, notice: "カートは空バイ"
       return
     end
 
@@ -38,7 +39,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver_now
-        format.html { redirect_to store_url, notice: 'ご注文ありがとうございます' }
+        format.html { redirect_to store_url, notice: '注文Thanksでぃ～す♪' }
         format.json { render :show, status: :created, location: @order }
       else
         @cart = current_cart
