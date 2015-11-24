@@ -1,0 +1,52 @@
+ja:
+  activerecord:
+    models:
+      order: "注文"
+    attributes:
+      order:
+        address: "ご住所"
+        name: "お名前"
+        email: "メールアドレス"
+        pay_type: "お支払方法"
+    errors:
+      messages:
+        inclusion: "は選択肢から選ばないかんバイ"
+        blank: "は必須入力バイ"
+  errors:
+    template:
+      body: "エラーが発生したバイ"
+      header:
+        one: "%{model}データに1つのエラーがあるバイ"
+        other: "%{model}データに%{count}個のエラーがあるバイ"
+
+  layouts:
+    application:
+      title: "実用的な本棚"
+      home: "ホーム"
+      questions: "良くある質問"
+      news: "ニュース"
+      contact: "お問い合わせ"
+      cart: "カートば見る"
+  store:
+    index:
+      title_html: "Pragmaticカタログ"
+      add_html: "カートに入れる"
+  orders:
+    new:
+      legend: "お客様の情報ば入力してくんしゃい"
+    form:
+      name: "お名前"
+      address_html: "ご住所"
+      email: "メールアドレス"
+      pay_type: "お支払い方法"
+      pay_prompt_html: "支払い方法ば選択してくんしゃい"
+      submit: "注文ば確定"
+
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
