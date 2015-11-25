@@ -46,7 +46,7 @@ Product.create([
       奥義も含めて北斗神拳の使い方を掲載！
       </p>
       <P>これであなたも北斗神拳伝承者に</p>},
-    image_url: 'hyakuretsuken.jpg',
+    image_url: 'hyakuretuken.jpg',
     price: 10.015
   },
   {
