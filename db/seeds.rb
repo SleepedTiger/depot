@@ -47,7 +47,7 @@ Product.create([
       </p>
       <P>これであなたも北斗神拳伝承者に</p>},
     image_url: 'hyakuretuken.jpg',
-    price: 10.015
+    price: 100.015
   },
   {
     id: 5,
@@ -57,6 +57,6 @@ Product.create([
       <p>貴方も最高のチーズカツカレーを食べてみよう♪
       </p>},
     image_url: 'curry.jpg',
-    price: 80.05
+    price: 65.05
   }
   ])
