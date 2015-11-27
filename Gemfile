@@ -53,5 +53,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-  gem 'will_paginate'
-  gem 'simplecov'
+gem 'will_paginate'
+gem 'simplecov'
+gem 'zip_code_jp'
+gem 'thin'
+gem 'rails-erd'
+gem 'annotate'
