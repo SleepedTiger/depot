@@ -25,7 +25,7 @@ class Product < ActiveRecord::Base
   }
 
   validates :title, length: {
-    minimum: 10,
+    minimum: 1,
     message: "%{count}文字以上で入力せんと！！"
   }
 
