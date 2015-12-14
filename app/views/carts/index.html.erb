@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Carts</h1>
+<h1>買い物籠</h1>
 
 <table>
   <thead>
@@ -12,9 +12,9 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '参照', cart %></td>
+        <td><%= link_to '編集', edit_cart_path(cart) %></td>
+        <td><%= link_to '削除', cart, method: :delete, data: { confirm: '本当に良かと?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Cart', new_cart_path %>
+<%= link_to '新しい買い物籠', new_cart_path %>

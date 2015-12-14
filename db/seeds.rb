@@ -41,20 +41,22 @@ Product.create([
   },
   {
     id: 4,
-    title: '青汁',
+    title: 'ハートでもできる北斗神拳',
     description: %{<p>
-      健康には良いが非常に不味い飲み物。つぶつぶ入りも有♪
-      </p>},
-    image_url: 'aojiru.jpg',
-    price: 10.015
+      奥義も含めて北斗神拳の使い方を掲載！
+      </p>
+      <P>これであなたも北斗神拳伝承者に</p>},
+    image_url: 'hyakuretuken.jpg',
+    price: 100.015
   },
   {
     id: 5,
-    title: 'チーズカツカレー',
+    title: 'チーズカツカレーの極意',
     description: %{<p>
-      カツカレーにチーズが乗っかった非常に美味なカレー♪
+      海原雄山・山岡士郎・荒岩一味など著名人のチーズカツカレーのレシピを公開！</p>
+      <p>貴方も最高のチーズカツカレーを食べてみよう♪
       </p>},
     image_url: 'curry.jpg',
-    price: 80.05
+    price: 65.05
   }
   ])
