@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params
 
   def now
-    @time = Time.zone.now
+    @time = Time.zone.now.strftime("%Y年%m月%d日 %H:%M:%S")
   end
 
   private
