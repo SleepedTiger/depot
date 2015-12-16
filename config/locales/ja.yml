@@ -22,15 +22,15 @@ ja:
   layouts:
     application:
       title: "GAME JUNGLE"
-      home: "ホーム"
+      home: "最初の画面"
       questions: "良くある質問"
-      news: "ニュース"
+      news: "新規情報"
       contact: "お問い合わせ"
-      cart: "カートば見る"
+      cart: "買い物籠ば見る"
   store:
     index:
       title_html: "商品一覧"
-      add_html: "カートに入れる"
+      add_html: "買い物籠に入れる"
   orders:
     new:
       legend: "お客様の情報ば入力してくんしゃい"

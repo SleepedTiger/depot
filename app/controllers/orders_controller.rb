@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to store_url, notice: "カートは空バイ"
+      redirect_to store_url, notice: "買い物籠は空バイ"
       return
     end
 
