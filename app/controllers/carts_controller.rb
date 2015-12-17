@@ -29,7 +29,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to @cart, notice: '買い物籠は正常に作成されたバイ' }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart, notice: '買い物籠は正常に更新されたバイ' }
         format.json { render :show, status: :ok, location: @cart }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to store_url, notice: 'カートは現在空バイ' }
+      format.html { redirect_to store_url, notice: '買い物籠は現在空バイ' }
       format.json { head :no_content }
     end
   end
@@ -71,8 +71,8 @@ class CartsController < ApplicationController
       begin
         @cart = Cart.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        logger.error "無効なカート#{params[:id]}にアクセスしようとしたバイ"
-        redirect_to store_url, notice: '無効なカートばい'
+        logger.error "無効な買い物籠#{params[:id]}にアクセスしようとしたバイ"
+        redirect_to store_url, notice: '無効な買い物籠ばい'
       # else
       #   respond_to do |format|
       #     format.html # show.html.erb

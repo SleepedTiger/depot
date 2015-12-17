@@ -9,6 +9,7 @@
 #  price       :decimal(8, 2)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  genre       :string
 #
 
 class Product < ActiveRecord::Base
@@ -25,7 +26,7 @@ class Product < ActiveRecord::Base
   }
 
   validates :title, length: {
-    minimum: 10,
+    minimum: 1,
     message: "%{count}文字以上で入力せんと！！"
   }
 

@@ -21,16 +21,16 @@ ja:
 
   layouts:
     application:
-      title: "実用的な本棚"
-      home: "ホーム"
+      title: "GAME JUNGLE"
+      home: "最初の画面"
       questions: "良くある質問"
-      news: "ニュース"
+      news: "新規情報"
       contact: "お問い合わせ"
-      cart: "カートば見る"
+      cart: "買い物籠ば見る"
   store:
     index:
-      title_html: "Pragmaticカタログ"
-      add_html: "カートに入れる"
+      title_html: "商品一覧"
+      add_html: "買い物籠に入れる"
   orders:
     new:
       legend: "お客様の情報ば入力してくんしゃい"
@@ -46,11 +46,13 @@ ja:
   number:
     currency:
       format:
-        unit: "$"
-        precision: 2
-        separator: "."
         delimiter: ","
-        format: "%u%n"
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
 
 ---
 ja:
@@ -189,16 +191,7 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
-  number:
-    currency:
-      format:
-        delimiter: ","
-        format: "%n%u"
-        precision: 0
-        separator: "."
-        significant: false
-        strip_insignificant_zeros: false
-        unit: 円
+
     format:
       delimiter: ","
       precision: 3

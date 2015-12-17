@@ -14,7 +14,7 @@
 class Order < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
-  PAYMENT_TYPES = ["銀行振り込み", "クレジットカード", "コンビニ払い"]
+  PAYMENT_TYPES = ["銀行振り込み", "クレジットカード", "コンビニ払い", "代金引換"]
   validates :name, :address, :email, presence: true
   validates :pay_type, inclusion: PAYMENT_TYPES
 

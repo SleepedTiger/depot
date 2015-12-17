@@ -1,22 +1,22 @@
-<!-- とりあえず -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Pragprog Booksオンラインストア</title>
+  <title>GAME Jungle</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
   <div id="banner">
-  <%= form_tag store_path, class: 'locale', method: :get do %>
+<!--   <%= form_tag store_path, class: 'locale', method: :get do %>
     <%= select_tag 'set_locale',
       options_for_select(LANGUAGES, I18n.locale.to_s),
       onchange: 'this.form.submit()' %>
     <%= submit_tag 'submit' %>
     <%= javascript_tag "$('.locale input').hide()" %>
   <% end %>
+ -->    
     <%= image_tag("logo.png") %>
     <%= @page_title || t('.title') %>
   </div>
@@ -27,12 +27,11 @@
       </div>
 
       <ul>
-        <li><a href="http://www..."><%= t('.home') %></a></li>
-        <li><a href="http://www.../faq"><%= t('.questions') %></a></li>
-        <li><a href="http://www.../news"><%= t('.news') %></a></li>
-        <li><a href="http://www.../contact"><%= t('.contact') %></a></li>
+        <li><%= link_to '最初の画面', store_path %></li>
+        <li><%= link_to '良くある質問', question_path %></li>
+        <li><%= link_to 'お問い合わせ', contact_path %></li>
         <% if @cart %>
-        <li><%= link_to(t('.cart'), cart_path(@cart)) %></li>
+        <li><%= link_to(t('.cart'), cart_path(@cart || 1)) %></li>
         <% end %>
             <li><a><%= @time %></a></li>
       </ul>
