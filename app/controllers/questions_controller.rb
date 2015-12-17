@@ -1,4 +1,8 @@
 class QuestionsController < ApplicationController
-  def questions
+  skip_before_action :authorize
+
+  def index
+    @cart = Cart.none
   end
+
 end

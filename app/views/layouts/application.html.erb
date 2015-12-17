@@ -27,8 +27,8 @@
       </div>
 
       <ul>
-        <li><a href="store#index"><%= t('.home') %></a></li>
-        <li><%= link_to '良くある質問', question_path %></a></li>
+        <li><%= link_to '最初の画面', store_path %></li>
+        <li><%= link_to '良くある質問', question_path %></li>
         <li><a href="http://www.../contact"><%= t('.contact') %></a></li>
         <% if @cart %>
         <li><%= link_to(t('.cart'), cart_path(@cart || 1)) %></li>
