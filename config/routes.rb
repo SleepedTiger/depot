@@ -3,6 +3,16 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'question' => 'questions#index'
   get 'contact' => 'contacts#index'
+  get 'ff' => 'ffs#index'
+  get 'we' => 'wes#index'
+  get 'dokimemo' => 'dokimemos#index'
+  get 'buyo' => 'buyos#index'
+  get 'abura' => 'aburas#index'
+  get 'fantasy' => 'fantasies#index'
+  get 'nekkyo' => 'nekkyoes#index'
+  get 'dragon' => 'dragons#index'
+  get 'kurade' => 'kuradeus#index'
+  get 'dosan' => 'dosans#index'
 
   controller :sessions do
     get 'login' => :new
