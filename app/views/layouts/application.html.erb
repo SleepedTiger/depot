@@ -29,7 +29,7 @@
       <ul>
         <li><%= link_to '最初の画面', store_path %></li>
         <li><%= link_to '良くある質問', question_path %></li>
-        <li><a href="http://www.../contact"><%= t('.contact') %></a></li>
+        <li><%= link_to 'お問い合わせ', contact_path %></li>
         <% if @cart %>
         <li><%= link_to(t('.cart'), cart_path(@cart || 1)) %></li>
         <% end %>

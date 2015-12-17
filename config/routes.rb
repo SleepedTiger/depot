@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :articles
   get 'admin' => 'admin#index'
   get 'question' => 'questions#index'
+  get 'contact' => 'contacts#index'
 
   controller :sessions do
     get 'login' => :new
