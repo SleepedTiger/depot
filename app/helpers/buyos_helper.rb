@@ -1,0 +1,2 @@
+module BuyosHelper
+end
