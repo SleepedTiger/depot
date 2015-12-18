@@ -4,5 +4,4 @@ class AburasController < ApplicationController
   def index
     @cart = Cart.none
   end
-  
 end
