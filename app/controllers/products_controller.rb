@@ -12,6 +12,11 @@ class ProductsController < ApplicationController
   def show
     skip_before_action :authorize
     @cart = Cart.none
+
+    private
+      def set_product
+        @product = Product.includes(:comments).find(params[:id])
+      end
   end
 
   # GET /products/new
