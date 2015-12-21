@@ -14,6 +14,11 @@ class ProductsController < ApplicationController
     @cart = Cart.none
   end
 
+    private
+      def set_product
+        @product = Product.includes(:comments).find(params[:id])
+      end
+
   # GET /products/new
   def new
     @product = Product.new

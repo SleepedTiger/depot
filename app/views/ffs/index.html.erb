@@ -9,8 +9,8 @@
 </table>
 
 <div id="genre">
-ジャンル：ロールプレイングゲーム<br>
-価格：6,400円
+  ジャンル：ロールプレイングゲーム<br>
+  価格：6,400円
 </div>
 
 <div id="syosai">
@@ -21,3 +21,30 @@
   ・最大4人パーティ編成可能<br>
 </div>
 <%= button_to '買い物籠に入れる', line_items_path(product_id: 2), remote: true %>
+
+<div>
+<%= form_for(@product.comments.build) do |f| %>
+  <%= f.hidden_field(:product_id) %><br>
+  <%= f.text_field(:name) %><br>
+  <%= f.number_field(:score) %><br>
+  <%= f.text_area(:body) %><br>
+  <%= f.submit %>
+  <% end %>
+</div>
+
+<div>
+  <% @product.comments.each do |comment| %>
+  <p>
+    <strong>評価者:</strong>
+    <%= comment.name %>
+  </p>
+  <p>
+    <strong>点数:</strong>
+    <%= comment.score %>
+  </p>
+  <p>
+    <strong>コメント:</strong>
+    <%= comment.body %>
+  </p>
+  <% end %>
+</div>
