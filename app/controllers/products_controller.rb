@@ -5,18 +5,15 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @cart = Cart.none
+    @product = Product.includes(:comments).find(params[:id])
   end
-
-    private
-      def set_product
-        @product = Product.includes(:comments).find(params[:id])
-      end
 
   # GET /products/new
   def new

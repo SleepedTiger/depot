@@ -16,6 +16,8 @@
 class Product < ActiveRecord::Base
   has_many :line_items
   has_many :comments
+  SCORE = ['1','2','3','4','5','6','7','8','9','10']
+  validates :score, inclusion: SCORE
 
   before_destroy :ensure_not_referenced_by_any_line_item
   

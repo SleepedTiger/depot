@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   商品名:
   <strong><%= @product.title %></strong>
@@ -22,3 +20,34 @@
 <strong>ゲームの特徴：<br>
 <%= sanitize(@product.detail) %></strong>
 </p>
+<br><br><br><br><br>
+
+<div>
+【コメント一覧】
+  <% @product.comments.each do |comment| %>
+  <p>
+    <strong>評価者:</strong>
+    <%= comment.name %>
+  </p>
+  <p>
+    <strong>点数:</strong>
+    <%= comment.score %>
+  </p>
+  <p>
+    <strong>コメント:</strong>
+    <%= comment.body %>
+  </p>
+  <% end %>
+</div>
+
+<br><br><br>
+<div>
+※コメントはこちらから
+<%= form_for(@product.comments.build) do |f| %>
+  <%= f.hidden_field(:product_id) %><br>
+  お名前：<%= f.text_field(:name) %><br>
+  点数：<%= f.select :score, Product::SCORE %><br>
+  コメント：<%= f.text_area(:body) %><br>
+  <%= f.submit %>
+  <% end %>
+</div>
