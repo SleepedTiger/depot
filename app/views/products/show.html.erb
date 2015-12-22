@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>商品名:</strong>
-  <%= @product.title %>
+  商品名:
+  <strong><%= @product.title %></strong>
 </p>
 
-<p>
-  <strong>商品詳細:</strong>
-  <%= @product.description %>
-</p>
+<%= image_tag(@product.image_url) %>
+<%= sanitize(@product.description) %>
 
 <p>
-  <strong>商品イメージ:</strong>
-  <%= @product.image_url %>
+  価格:
+  <strong><%= number_to_currency(@product.price) %></strong>
 </p>
 
-<p>
-  <strong>価格:</strong>
-  <%= @product.price %>
-</p>
+<%= button_to '買い物籠に入れる', line_items_path(product_id: @product), remote: true %>
 
 <%= link_to '編集', edit_product_path(@product) %> |
-<%= link_to '戻る', products_path %>
+<%= link_to '戻る', store_path %>
+
+<p>
+<strong>ゲームの特徴：<br>
+<%= sanitize(@product.detail) %></strong>
+</p>

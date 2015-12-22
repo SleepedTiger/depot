@@ -11,16 +11,7 @@
     <%= sanitize(product.description) %>
     <div class="price_line">
       <span class="price"><%= number_to_currency(product.price) %></span>
-      <%= link_to_if(product.id == 1, '商品詳細', kurade_path){} %>
-      <%= link_to_if(product.id == 2, '商品詳細', ff_path){} %>
-      <%= link_to_if(product.id == 3, '商品詳細', dragon_path){} %>
-      <%= link_to_if(product.id == 4, '商品詳細', dokimemo_path){} %>
-      <%= link_to_if(product.id == 5, '商品詳細', dosan_path){} %>
-      <%= link_to_if(product.id == 6, '商品詳細', buyo_path){} %>
-      <%= link_to_if(product.id == 7, '商品詳細', nekkyo_path){} %>
-      <%= link_to_if(product.id == 8, '商品詳細', we_path){} %>
-      <%= link_to_if(product.id == 9, '商品詳細', abura_path){} %>
-      <%= link_to_if(product.id == 10, '商品詳細', fantasy_path){} %>
+      <%= link_to '商品詳細', product %>
       <%= button_to t('.add_html'), line_items_path(product_id: product), remote: true %>
     </div>
   </div>
