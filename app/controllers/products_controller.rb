@@ -12,7 +12,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @cart = Cart.none
-    @product = Product.includes(:comments).find(params[:id])
+    @product = Product.find(params[:id])
+    @comment = Product.find(params[:id]).comments.build
   end
 
   # GET /products/new
