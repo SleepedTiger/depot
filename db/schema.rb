@@ -11,23 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151218071601) do
+ActiveRecord::Schema.define(version: 20151222003903) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "commentdosans", force: :cascade do |t|
-    t.string   "commenter"
-    t.integer  "point"
-    t.text     "body"
-    t.integer  "dosan_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "commentdosans", ["dosan_id"], name: "index_commentdosans_on_dosan_id"
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -37,38 +26,6 @@ ActiveRecord::Schema.define(version: 20151218071601) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "faqs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "ffs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "hyokaffs", force: :cascade do |t|
-    t.string   "commenter"
-    t.integer  "point"
-    t.text     "body"
-    t.integer  "ff_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "hyokaffs", ["ff_id"], name: "index_hyokaffs_on_ff_id"
-
-  create_table "hyokas", force: :cascade do |t|
-    t.string   "commenter"
-    t.integer  "point"
-    t.text     "body"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "hyokas", ["product_id"], name: "index_hyokas_on_product_id"
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -96,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151218071601) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "genre"
+    t.string   "detail"
   end
 
   create_table "users", force: :cascade do |t|

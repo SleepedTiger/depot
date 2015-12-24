@@ -27,3 +27,42 @@
 <br>
 
 <%= link_to '新規商品追加', new_product_path %>
+
+
+
+<%= link_to "新規作成", new_product_path_path %>
+  <%= flash.notice %>
+  <%= flash.alert %>
+<hr>
+<% @product.each do |f| %>
+    <ul>
+      タイトル：<%= link_to f.title, product_path(f)%>
+    </ul>
+    <ul>
+      名前：<%= f.name %>
+    </ul>
+    <ul>
+      点数：<%= f.score %>
+    </ul>
+    <ul><br>本文：</br>
+      <%= simple_format(truncate(f.content,:length => 1000)) %>
+    </ul>
+    <ul>
+      作成日時：<%= f.created_at.strftime("%Y/%m月%d日(#{%w(日 月 火 水 木 金 土 日)[Time.now.wday]})") %>
+    </ul>
+    <ul>
+      <%= link_to "編集", edit_product_path(f) %>&nbsp;：&nbsp;<%= link_to "削除", f,
+    :confirm => "削除してよろしいですか？",
+    :method => :delete %>
+    </ul>
+    <ol>
+    <% f.comments.each do |comment| %>
+      <li>名前：<%= comment.name %>
+          <%= comment.created_at.present? ? comment.created_at.strftime("%Y/%m月/%d日(#{%w(日 月 火 水 木 金 土 日)[Time.now.wday]}) %T ") : comment.created_at %>
+      </li>
+      <%= simple_format(comment.body) %>
+    <% end %>
+    </ol>
+    <hr>
+
+<% end %>
