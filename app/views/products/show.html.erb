@@ -4,7 +4,7 @@
   <% if @product.comments.sum(:score) == 0 %>
   評価平均点：まだ評価されとらんバイ(><)
   <% else %>
-  評価平均点：<strong><%= @product.comments.sum(:score).to_f / @product.comments.count %></strong>点
+  評価平均点：<strong><%= (@product.comments.sum(:score).to_f / @product.comments.count).round(1) %></strong>点(10点満点)
   <% end %>
 </p>
 
