@@ -16,7 +16,7 @@
 <% @product.comments.each do |comment| %>
   <li>名前：<%= comment.name %>
       <%= comment.created_at.present? ? comment.created_at.strftime("%Y/%m月/%d日(#{%w(日 月 火 水 木 金 土 日)[Time.now.wday]}) %T ") : comment.created_at %>
-  <br>評価点：<%= comment.score %>
+  <br>評価点：<%= comment.score %>点
   <br>コメント：<%= comment.body %>
   </li><br>
 <% end %>
