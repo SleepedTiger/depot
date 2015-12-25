@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @cart = Cart.none
+    @cart = Cart.find(session[:cart_id])
     @product = Product.find(params[:id])
     @comment = Product.find(params[:id]).comments.build
   end
