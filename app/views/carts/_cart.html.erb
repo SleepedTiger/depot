@@ -10,5 +10,5 @@
 </table>
 
 <%= button_to('注文画面へ', new_order_path, method: :get) %>
-<%= button_to('買い物籠ば空にする', cart, method: :delete, data: {confirm: '本当に良かと？'}) %>
+<%= button_to("買い物籠を空にする", warning_path, method: :get,  :controller=>"warnings", :action => "index", :id => :cart_id ) %>
 <% end %>

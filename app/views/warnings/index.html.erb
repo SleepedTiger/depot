@@ -1,0 +1,12 @@
+<div id="tikusyo">
+<%= image_tag 'nakigao.jpg',:width => '384', :height => '255' %>
+
+<p>
+<strong>本当にカラにしていいの？<br>
+カラにしてもあなたの青春に後悔はないの？<br>
+もう一度考え直してくれると嬉しいな♪
+</p>
+
+<%= button_to "やっぱり空にしない！", store_path, :method => :get %>
+<%= button_to '空にするってば・・・', { :controller => "carts", :action => "destroy", :id => session[:cart_id] }, :confirm => "本当に良かと？", :method => :delete %>
+</div>

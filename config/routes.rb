@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'question' => 'questions#index'
   get 'contact' => 'contacts#index'
+  get 'warning' => 'warnings#index'
 
   resources :products do
     resources :comments
