@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
     if @comment.save
-      flash[:notice] = "作成できました！"
+      flash[:notice] = "作成できたバイ！"
       redirect_to product_path(@product)
     else
       render :template => "products/show"
