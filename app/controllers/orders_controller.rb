@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.paginate(page: params[:page], per_page: 10).order('created_at desc')
+    @cart = Cart.find(session[:cart_id])
   end
 
   # GET /orders/1

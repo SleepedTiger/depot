@@ -5,26 +5,31 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.order(:name)
+    @cart = Cart.find(session[:cart_id])
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @cart = Cart.find(session[:cart_id])
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @cart = Cart.find(session[:cart_id])
   end
 
   # GET /users/1/edit
   def edit
+    @cart = Cart.find(session[:cart_id])
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @cart = Cart.find(session[:cart_id])
 
     respond_to do |format|
       if @user.save
@@ -40,6 +45,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @cart = Cart.find(session[:cart_id])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to users_url, notice: "ユーザ#{@user.name}を更新したバイ。" }
@@ -54,6 +60,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @cart = Cart.find(session[:cart_id])
     begin
       @user.destroy
       flash[:notice] = "ユーザ#{@user.name}ば削除したバイ。"
